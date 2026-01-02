@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lexis Academy | English for Agile Minds</title>
-    <meta name="description" content="Aprenda inglês com Metodologia Ágil. Conheça nossos cursos: Imersão (2 semanas), Maestria (8 semanas) e The Way (Cíclico Flexível).">
+    <title>Lexis Academy | Inglês é Habilidade, Não Conhecimento</title>
+    <meta name="description" content="Pare de estudar inglês como matéria escolar. Treine como um esporte. Metodologia baseada em Neurociência e Aquisição de Habilidade.">
     
     <!-- Fontes Modernas e Tech -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,19 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- DEFINIÇÃO DA PALETA DINÂMICA --- */
+        /* --- DEFINIÇÃO DA PALETA (ROYAL NAVY DINÂMICA) --- */
         :root {
             --bg-main: #0f172a;       /* Azul Slate Profundo (Base) */
-            --bg-card: #1e293b;       /* Azul um pouco mais claro para cartões */
+            --bg-card: #1e293b;       /* Azul médio para contraste */
+            --bg-darker: #0b1120;     /* Azul quase preto para seções de impacto */
             
             --yellow-action: #fbd24c; /* Amarelo Vibrante (Ação/Botões) */
-            --yellow-hover: #fcd34d;  /* Amarelo Hover */
-            
-            --bronze-accent: #b4b4cc; /* Usado agora como tom neutro/frio de apoio */
-            --bronze-real: #936e11;   /* Detalhes de "Ouro" sutis para autoridade */
             
             --text-white: #f8fafc;    /* Títulos */
             --text-body: #94a3b8;     /* Texto de leitura */
+            --text-muted: #64748b;    /* Texto secundário */
+            
+            --border-light: rgba(255,255,255,0.05);
         }
 
         * {
@@ -50,25 +50,22 @@
             letter-spacing: -0.02em;
         }
 
-        /* Utilitários de Texto */
+        strong { color: var(--text-white); }
+        
         .text-yellow { color: var(--yellow-action); }
-        .text-gradient {
-            background: linear-gradient(90deg, var(--yellow-action), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .text-highlight { color: #fff; border-bottom: 2px solid var(--yellow-action); }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* --- BOTÕES DE ALTO CONTRASTE --- */
+        /* --- BOTÕES --- */
         .btn {
             display: inline-block;
             background-color: var(--yellow-action);
-            color: #0f172a; /* Texto escuro no amarelo para leitura perfeita */
+            color: #0f172a;
             padding: 16px 32px;
             font-weight: 800;
             text-transform: uppercase;
@@ -78,7 +75,7 @@
             border: 2px solid var(--yellow-action);
             font-size: 0.95rem;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(251, 210, 76, 0.2); /* Glow Amarelo */
+            box-shadow: 0 4px 15px rgba(251, 210, 76, 0.2);
             cursor: pointer;
         }
 
@@ -112,7 +109,7 @@
             z-index: 1000;
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid var(--border-light);
             padding: 20px 0;
         }
 
@@ -147,13 +144,11 @@
             padding-top: 180px;
             padding-bottom: 100px;
             text-align: center;
-            position: relative;
-            /* Gradiente de fundo sutil para dar profundidade */
-            background: radial-gradient(circle at center top, rgba(30, 41, 59, 1) 0%, var(--bg-main) 70%);
+            background: radial-gradient(circle at center top, #1e293b 0%, var(--bg-main) 70%);
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             max-width: 950px;
             margin: 0 auto 24px;
         }
@@ -165,82 +160,77 @@
             color: var(--text-body);
         }
 
-        /* Tagzinha Agile */
-        .hero-tag {
-            display: inline-block;
-            background: rgba(251, 210, 76, 0.1);
-            color: var(--yellow-action);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border: 1px solid rgba(251, 210, 76, 0.3);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* --- METODOLOGIA --- */
-        .method-section {
-            background-color: var(--bg-main);
+        /* --- SECTION: MINDSET SHIFT (ESPORTE) --- */
+        .mindset-section {
             padding: 100px 0;
-            border-top: 1px solid rgba(255,255,255,0.03);
+            background-color: var(--bg-main);
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .modules-grid {
+        .analogy-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             margin-top: 50px;
         }
 
-        .module-card {
-            background: var(--bg-card);
-            padding: 35px;
+        .analogy-card {
+            background: rgba(255,255,255,0.02);
+            padding: 30px;
             border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid var(--border-light);
+            text-align: center;
             transition: 0.3s;
         }
 
-        .module-card:hover {
+        .analogy-card:hover {
             border-color: var(--yellow-action);
             transform: translateY(-5px);
         }
 
-        .module-card h4 {
-            color: var(--text-white); 
-            margin-bottom: 10px; 
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .module-icon { color: var(--yellow-action); }
+        .emoji-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
 
-        /* --- CURSOS (GRID) --- */
+        /* --- SECTION: NEUROCIÊNCIA --- */
+        .science-section {
+            padding: 100px 0;
+            background-color: var(--bg-card);
+        }
+
+        .science-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .science-box {
+            background: var(--bg-darker);
+            padding: 30px;
+            border-left: 4px solid var(--yellow-action);
+            margin-bottom: 20px;
+        }
+
+        /* --- CURSOS --- */
         .products-section {
             padding: 100px 0;
-            background: #0b1120; /* Um tom ainda mais escuro para destacar os cards */
+            background-color: var(--bg-darker);
         }
 
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            align-items: start;
         }
 
         .product-card {
             background: var(--bg-main);
-            border: 1px solid rgba(148, 163, 184, 0.2);
+            border: 1px solid var(--border-light);
             border-radius: 12px;
             padding: 40px;
-            position: relative;
             display: flex;
             flex-direction: column;
             transition: 0.3s;
-            height: 100%;
+            position: relative;
         }
 
         .product-card:hover {
@@ -248,49 +238,34 @@
             box-shadow: 0 0 30px rgba(251, 210, 76, 0.1);
         }
 
-        /* Destaque para o card do meio ou principal */
         .product-card.featured {
             border: 2px solid var(--yellow-action);
-            transform: scale(1.02);
             background: linear-gradient(180deg, rgba(251, 210, 76, 0.05) 0%, var(--bg-main) 100%);
         }
 
         .badge {
             position: absolute;
-            top: -14px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--yellow-action);
             color: #0f172a;
-            padding: 6px 16px;
+            padding: 4px 12px;
             font-size: 0.75rem;
             font-weight: 800;
             text-transform: uppercase;
             border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .p-title { font-size: 2rem; margin-bottom: 5px; }
-        .p-subtitle { 
-            color: var(--yellow-action); 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-            letter-spacing: 1px; 
-            margin-bottom: 25px; 
-        }
-        
-        .p-features {
-            list-style: none;
-            margin: 20px 0 40px;
-            flex-grow: 1;
-        }
+        .p-title { font-size: 1.8rem; margin-bottom: 5px; }
+        .p-subtitle { color: var(--yellow-action); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 25px; }
         
         .p-features li {
-            margin-bottom: 14px;
-            padding-left: 25px;
+            list-style: none;
+            margin-bottom: 12px;
+            padding-left: 20px;
             position: relative;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #cbd5e1;
         }
         
@@ -302,52 +277,19 @@
             font-weight: bold;
         }
 
-        /* --- GARANTIA --- */
-        .guarantee-box {
-            background: rgba(147, 110, 17, 0.1); /* Toque de bronze para autoridade na garantia */
-            border: 1px solid var(--bronze-real);
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 60px auto 0;
-            max-width: 800px;
-        }
-
-        /* --- FAQ --- */
-        .faq-section {
-            padding: 80px 0;
-            background-color: var(--bg-main);
-        }
-        
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .faq-item { margin-bottom: 30px; }
-        .faq-question {
-            color: var(--text-white);
-            font-weight: 700;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
         /* --- FOOTER --- */
         footer {
             padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border-light);
             font-size: 0.9rem;
-            color: var(--text-body);
+            text-align: center;
         }
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
-            .products-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
+            .analogy-grid, .science-grid, .products-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
-            .faq-grid { grid-template-columns: 1fr; }
-            .product-card.featured { transform: scale(1); }
         }
     </style>
 </head>
@@ -358,9 +300,9 @@
         <div class="container nav-box">
             <a href="#" class="logo">Lexis<span>Academy</span></a>
             <nav class="nav-links">
-                <a href="#metodo">Metodologia</a>
+                <a href="#mindset">Por que funciona?</a>
+                <a href="#ciencia">A Ciência</a>
                 <a href="#cursos">Cursos</a>
-                <a href="#garantia">Garantia</a>
                 <a href="#contato" style="color: var(--yellow-action);">Falar com Consultor</a>
             </nav>
         </div>
@@ -369,224 +311,207 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <span class="hero-tag">Neurociência + Scrum + Tecnologia</span>
+            <div style="margin-bottom: 20px; color: var(--yellow-action); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">
+                Inglês não é conhecimento. É habilidade.
+            </div>
             <h1>
-                Acelere sua Fluência com a <br>
-                <span class="text-gradient">Metodologia Ágil Lexis</span>
+                Idioma não se aprende.<br>
+                <span class="text-highlight">Idioma se treina.</span>
             </h1>
             <p>
-                A única escola que utiliza Aula Invertida e Aprendizagem Baseada em Problemas para destravar sua carreira. Resultados reais em prazos definidos.
+                Saber regras gramaticais não faz você falar, assim como ler sobre natação não faz você nadar. Na Lexis, tratamos o inglês como um <strong>esporte cognitivo</strong>.
             </p>
             <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="#cursos" class="btn">Escolher meu Programa</a>
-                <a href="#metodo" class="btn btn-outline">Como Funciona</a>
+                <a href="#cursos" class="btn">Quero Começar o Treino</a>
+                <a href="#mindset" class="btn btn-outline">Entender a Lógica</a>
             </div>
         </div>
     </section>
 
-    <!-- METODOLOGIA -->
-    <section id="metodo" class="method-section">
+    <!-- O ERRO DE ORIGEM (ANALOGIAS) -->
+    <section id="mindset" class="mindset-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2>Engenharia de Fluência</h2>
-                <p style="max-width: 600px; margin: 10px auto 0;">
-                    Nossa metodologia combina ferramentas modernas (Memrise, ChatClass, IA) com uma estrutura pedagógica sólida.
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2>Por que você "estuda" há anos e trava?</h2>
+                <p style="margin-top: 15px;">
+                    Porque você foi ensinado a tratar inglês como História ou Geografia (memória de dados). Mas inglês funciona como Futebol ou Música (memória muscular e processamento rápido).
                 </p>
             </div>
+
+            <div class="analogy-grid">
+                <div class="analogy-card">
+                    <span class="emoji-icon">🏊</span>
+                    <h4>Natação</h4>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">
+                        Você pode ler 10 livros sobre mecânica de fluidos. Se pular na piscina sem treino, <strong>você afunda</strong>.
+                    </p>
+                </div>
+                <div class="analogy-card">
+                    <span class="emoji-icon">🎸</span>
+                    <h4>Música</h4>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">
+                        Saber ler partitura não garante que você toque um solo de guitarra. É preciso <strong>memória motora</strong>.
+                    </p>
+                </div>
+                <div class="analogy-card">
+                    <span class="emoji-icon">⚽</span>
+                    <h4>Futebol</h4>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">
+                        No jogo, não dá tempo de pensar na regra do impedimento. A decisão precisa ser <strong>automática</strong>.
+                    </p>
+                </div>
+            </div>
             
-            <div class="modules-grid">
-                <div class="module-card">
-                    <h4><span class="module-icon">01.</span> Start (Fonética)</h4>
-                    <p>Correção de vícios, pronúncia clara e introdução aos phrasal verbs. A base da confiança para falar sem travar.</p>
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="color: var(--yellow-action);">Fluência é Automação, não Perfeição.</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- A CIÊNCIA (NEUROCIÊNCIA) -->
+    <section id="ciencia" class="science-section">
+        <div class="container">
+            <div class="science-grid">
+                <div>
+                    <h2 style="margin-bottom: 20px;">O que a Neurociência diz<br>(Sem academicismo)</h2>
+                    <p style="margin-bottom: 20px;">
+                        O cérebro possui dois sistemas de memória. A escola tradicional foca no errado. A Lexis foca no que gera fala.
+                    </p>
+                    <a href="#cursos" class="btn">Ver Programas de Treino</a>
                 </div>
-                <div class="module-card">
-                    <h4><span class="module-icon">02.</span> Run (Estruturas)</h4>
-                    <p>Domínio intensivo da gramática prática. Tempos verbais (presente, passado, futuro) sem "decoreba", aplicados na prática.</p>
-                </div>
-                <div class="module-card">
-                    <h4><span class="module-icon">03.</span> Fly (Vocabulário)</h4>
-                    <p>Foco nas 600-700 palavras mais usadas no cotidiano e business. Collocations e expressões idiomáticas de alto nível.</p>
-                </div>
-                <div class="module-card">
-                    <h4><span class="module-icon">04.</span> Liberty (Conversação)</h4>
-                    <p>Fluência oral e compreensão auditiva acima de 70% em contextos reais, reuniões e entrevistas.</p>
+                <div>
+                    <div class="science-box">
+                        <h4>Memória Declarativa (Teoria)</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            É onde você guarda fatos ("O verbo to be é..."). É lenta e exige esforço consciente. <strong>Inútil na hora de falar rápido.</strong>
+                        </p>
+                    </div>
+                    <div class="science-box" style="border-color: #fff;">
+                        <h4 style="color: var(--yellow-action);">Memória Procedural (Habilidade)</h4>
+                        <p style="font-size: 0.9rem;">
+                            É onde você guarda habilidades (andar de bike, dirigir). É automática e inconsciente. <strong>É aqui que a Lexis atua.</strong>
+                        </p>
+                    </div>
+                    <div class="science-box">
+                        <h4>Input vs. Output</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            Ler e ouvir (Input) é passivo. Falar (Output) é o que consolida o aprendizado. Aqui você fala desde o dia 1.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CURSOS (COMPARATIVO) -->
+    <!-- CURSOS -->
     <section id="cursos" class="products-section">
         <div class="container">
             <div style="text-align: center; margin-bottom: 60px;">
-                <h2>Qual formato se adapta à sua vida?</h2>
-                <p>Três caminhos, o mesmo destino: a fluência funcional.</p>
+                <h2>Escolha seu Formato de Treino</h2>
+                <p>Não formamos linguistas. Formamos usuários do idioma.</p>
             </div>
 
             <div class="products-grid">
                 
-                <!-- CARD 1: THE WAY -->
+                <!-- THE WAY -->
                 <div class="product-card featured">
-                    <span class="badge">Mais Flexível</span>
+                    <span class="badge">Flexível</span>
                     <h3 class="p-title">The Way</h3>
-                    <p class="p-subtitle">Curso de Inglês Cíclico Online</p>
-                    
-                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Para quem tem rotina variável e busca consistência a longo prazo.</p>
-                    
+                    <p class="p-subtitle">Treino Cíclico Online</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Para quem precisa integrar o treino à rotina sem rigidez.</p>
                     <ul class="p-features">
                         <li><strong>Duração:</strong> 10 a 12 meses</li>
-                        <li><strong>Aulas Ao Vivo:</strong> 5 horários/dia (07h, 12h, 18h, 20h, 21h)</li>
-                        <li><strong>Modelo Cíclico:</strong> Comece a qualquer momento</li>
-                        <li><strong>Formato:</strong> 100% Online e Interativo</li>
-                        <li><strong>Garantia:</strong> Reembolso total nas 5 primeiras aulas</li>
+                        <li><strong>Aulas Ao Vivo:</strong> 5x ao dia (07h, 12h, 18h, 20h, 21h)</li>
+                        <li><strong>Foco:</strong> Construção de hábito e automação</li>
+                        <li><strong>Garantia:</strong> Reembolso nas primeiras 5 aulas</li>
                     </ul>
-                    
-                    <a href="#contato" class="btn btn-full">Quero Flexibilidade</a>
+                    <a href="#contato" class="btn btn-full" style="margin-top: auto;">Iniciar The Way</a>
                 </div>
 
-                <!-- CARD 2: MAESTRIA -->
+                <!-- MAESTRIA -->
                 <div class="product-card">
                     <h3 class="p-title">Maestria</h3>
-                    <p class="p-subtitle">Aceleração de 8 Semanas</p>
-                    
-                    <p style="font-size: 0.9rem; margin-bottom: 20px;">A mesma carga da imersão, adaptada para quem trabalha e estuda à noite.</p>
-                    
+                    <p class="p-subtitle">Aceleração 8 Semanas</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Intensivo noturno. A mesma carga da imersão, parcelada em 2 meses.</p>
                     <ul class="p-features">
-                        <li><strong>Duração:</strong> 8 Semanas (2 meses)</li>
-                        <li><strong>Horário:</strong> Seg a Sex, 19h às 22h (Ao Vivo)</li>
-                        <li><strong>Carga Horária:</strong> 120 horas totais</li>
-                        <li><strong>Destaque:</strong> Ferramentas Memrise + ChatClass</li>
-                        <li><strong>Garantia Vitalícia:</strong> Refaça o curso quando quiser</li>
+                        <li><strong>Horário:</strong> Seg a Sex, 19h às 22h</li>
+                        <li><strong>Total:</strong> 120 horas de treino ativo</li>
+                        <li><strong>Destaque:</strong> Ferramentas digitais inclusas</li>
+                        <li><strong>Garantia Vitalícia:</strong> Refaça quando quiser</li>
                     </ul>
-                    
-                    <a href="#contato" class="btn btn-full btn-outline">Quero Acelerar</a>
+                    <a href="#contato" class="btn btn-full btn-outline" style="margin-top: auto;">Iniciar Maestria</a>
                 </div>
 
-                <!-- CARD 3: IMERSÃO -->
+                <!-- IMERSÃO -->
                 <div class="product-card">
                     <h3 class="p-title">Imersão</h3>
-                    <p class="p-subtitle">O Bootcamp (São Carlos-SP)</p>
-                    
-                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Para quem precisa de resultados urgentes (viagens, entrevistas).</p>
-                    
+                    <p class="p-subtitle">Bootcamp Presencial (SP)</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Choque de gestão no seu inglês. 2 semanas para mudar tudo.</p>
                     <ul class="p-features">
-                        <li><strong>Duração:</strong> 2 Semanas (Seg a Sáb)</li>
-                        <li><strong>Intensidade:</strong> 10 horas por dia (08h às 19h)</li>
-                        <li><strong>Foco:</strong> Destravar fala e bloqueios psicológicos</li>
-                        <li><strong>Ambiente:</strong> Presencial (networking e foco total)</li>
-                        <li><strong>Garantia Vitalícia:</strong> Refaça gratuitamente sempre</li>
+                        <li><strong>Intensidade:</strong> 10 horas/dia (Seg a Sáb)</li>
+                        <li><strong>Foco:</strong> Destravar bloqueios psicológicos</li>
+                        <li><strong>Ambiente:</strong> Isolamento focado em São Carlos</li>
+                        <li><strong>Garantia Vitalícia:</strong> Refaça gratuitamente</li>
                     </ul>
-                    
-                    <a href="#contato" class="btn btn-full btn-outline">Quero Imersão</a>
+                    <a href="#contato" class="btn btn-full btn-outline" style="margin-top: auto;">Iniciar Imersão</a>
                 </div>
 
-            </div>
-
-            <!-- GARANTIA BOX -->
-            <div id="garantia" class="guarantee-box">
-                <h3 style="color: var(--text-white); margin-bottom: 15px;">🔒 A Única Escola com Garantia Vitalícia</h3>
-                <p>
-                    Para os cursos <strong>Maestria</strong> e <strong>Imersão</strong>, oferecemos a Garantia Vitalícia. Se sentir necessidade de reciclar seu inglês no futuro, você pode refazer o curso gratuitamente (sujeito a vagas). No <strong>The Way</strong>, garantimos sua adaptação nas primeiras 5 aulas ou devolvemos seu dinheiro.
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq-section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;">Dúvidas Frequentes</h2>
-            
-            <div class="faq-grid">
-                <!-- Coluna 1 -->
-                <div>
-                    <div class="faq-item">
-                        <div class="faq-question">1. Não tenho tempo para estudar todos os dias.</div>
-                        <p>O curso <strong>The Way</strong> foi feito para você. Com aulas em 5 horários diferentes (manhã, almoço e noite), você ajusta o inglês à sua rotina, não o contrário.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">2. Tenho medo de não acompanhar o ritmo.</div>
-                        <p>Nossa metodologia é adaptativa. No <strong>Maestria</strong> e na <strong>Imersão</strong>, trabalhamos com instrução por pares e grupos operativos para que ninguém fique para trás.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">3. O curso online funciona mesmo?</div>
-                        <p>Sim. Utilizamos Aula Invertida e ferramentas digitais (Teaches, Gamificação) que mantêm o engajamento alto. Você não fica apenas assistindo vídeos passivamente.</p>
-                    </div>
-                </div>
-
-                <!-- Coluna 2 -->
-                <div>
-                    <div class="faq-item">
-                        <div class="faq-question">4. Para quem é a Imersão Presencial?</div>
-                        <p>Para profissionais com urgência, recém-formados ou quem tem "bloqueios" na fala. São 120 horas em 14 dias — uma evolução de meses ou anos em tempo recorde.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">5. Preciso ter nível avançado?</div>
-                        <p>Não. Nossos cursos atendem do básico ao intermediário. O foco é atingir a <strong>fluência funcional</strong> para comunicação real.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">6. Quais as formas de pagamento?</div>
-                        <p>Aceitamos cartão de crédito (parcelamento em até 12x), boleto e PIX. Consulte nossos consultores para descontos à vista.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA FINAL -->
+    <!-- FORMULÁRIO WHATSAPP -->
     <section id="contato" style="padding: 100px 0; text-align: center; background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);">
         <div class="container" style="max-width: 600px;">
-            <h2 style="margin-bottom: 20px;">Não deixe mais uma oportunidade passar</h2>
+            <h2 style="margin-bottom: 20px;">Pare de estudar. Comece a treinar.</h2>
             <p style="margin-bottom: 40px;">
-                Seja The Way, Maestria ou Imersão, temos o plano perfeito para o seu momento de carreira. Agende uma conversa diagnóstica.
+                Fale com um especialista para descobrir qual intensidade de treino é ideal para o seu momento profissional.
             </p>
             
-            <form style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
-                <input type="text" placeholder="Nome Completo" style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem;">
-                <input type="email" placeholder="E-mail" style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem;">
-                <input type="tel" placeholder="WhatsApp (com DDD)" style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem;">
-                <select style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem; color: #555;">
-                    <option value="" disabled selected>Qual curso te interessa mais?</option>
-                    <option value="the-way">The Way (Flexível Online)</option>
-                    <option value="maestria">Maestria (Intensivo Online)</option>
-                    <option value="imersao">Imersão (Presencial SP)</option>
-                    <option value="indeciso">Ainda não sei, preciso de ajuda</option>
+            <form id="form-contato" onsubmit="enviarParaWhatsApp(event)" style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                <input id="nome" type="text" placeholder="Nome Completo" required style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem;">
+                <input id="email" type="email" placeholder="E-mail Corporativo" required style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem;">
+                <input id="telefone" type="tel" placeholder="WhatsApp (com DDD)" required style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem;">
+                <select id="interesse" style="padding: 15px; border-radius: 4px; border: none; font-size: 1rem; color: #555;">
+                    <option value="" disabled selected>Qual treino te interessa?</option>
+                    <option value="The Way">The Way (Flexível)</option>
+                    <option value="Maestria">Maestria (Intensivo Online)</option>
+                    <option value="Imersão">Imersão (Presencial)</option>
+                    <option value="Indeciso">Preciso de Avaliação</option>
                 </select>
-                <button type="submit" class="btn btn-full">Solicitar Contato do Especialista</button>
+                <button type="submit" class="btn btn-full">Solicitar Diagnóstico</button>
             </form>
-            <p style="font-size: 0.8rem; margin-top: 20px; color: #64748b;">*Seus dados estão seguros conosco.</p>
+            <p style="font-size: 0.8rem; margin-top: 20px; color: #64748b;">*Seus dados são usados apenas para contato comercial.</p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-            <div>
-                <a href="#" class="logo" style="font-size: 1.3rem;">Lexis<span>Academy</span></a>
-                <p style="margin-top: 15px; max-width: 300px; font-size: 0.9rem;">
-                    CNPJ: 38.229.678/0001-13<br>
-                    Rua Visconde de Inhaúma, 1295<br>
-                    São Carlos – SP
-                </p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 15px; font-size: 1rem; color: var(--text-white);">Contato</h4>
-                <p>WhatsApp: (16) 99405-1552</p>
-                <p>contato@lexis.academy</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 15px; font-size: 1rem; color: var(--text-white);">Cursos</h4>
-                <p><a href="#cursos" style="color: var(--text-body); text-decoration: none;">The Way</a></p>
-                <p><a href="#cursos" style="color: var(--text-body); text-decoration: none;">Maestria</a></p>
-                <p><a href="#cursos" style="color: var(--text-body); text-decoration: none;">Imersão</a></p>
-            </div>
-        </div>
-        <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem;">
-            &copy; 2025 Lexis English Academy. Todos os direitos reservados.
+        <div class="container" style="text-align: center;">
+            <a href="#" class="logo" style="font-size: 1.5rem;">Lexis<span>Academy</span></a>
+            <p style="margin-top: 20px; color: var(--text-muted);">
+                CNPJ: 38.229.678/0001-13 • São Carlos, SP<br>
+                High Performance English Training
+            </p>
+            <p style="margin-top: 40px; font-size: 0.8rem; color: #334155;">
+                &copy; 2025 Lexis Academy. Todos os direitos reservados.
+            </p>
         </div>
     </footer>
 
-    <!-- SCRIPT DO CHAT AO VIVO -->
+    <!-- SCRIPT WHATSAPP + CHAT -->
+    <script>
+        function enviarParaWhatsApp(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const interesse = document.getElementById('interesse').value;
+            const numeroWhatsApp = "5516994051552"; 
+            const mensagem = `Olá! Li sobre a metodologia de Esporte Cognitivo e quero saber mais.%0A%0A*Nome:* ${nome}%0A*Interesse:* ${interesse}`;
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}`, '_blank');
+        }
+    </script>
     <script type="text/javascript" src="https://app.wtbotbuilder.com/script/webchat-link.js?code=1766778328220161"></script>
 
 </body>
