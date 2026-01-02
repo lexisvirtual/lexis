@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexis English Academy | Inglês de Alta Performance</title>
+    <meta name="description" content="A única escola de inglês que utiliza Metodologia Ágil e Neurociência para acelerar sua fluência. Conheça o The Way, Maestria e Imersão.">
+    
+    <!-- Fonte Premium para visual corporativo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & VARIAVEIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Manrope', 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            /* PALETA REAL SOLICITADA */
+            --navy-main: #283459;    /* Fundo Principal */
+            --navy-dark: #1b2440;    /* Variação para seções alternadas */
+            --bronze: #936e11;       /* Destaques e Botões */
+            --bronze-light: #b08416; /* Hover */
+            --lavender-grey: #b4b4cc;/* Texto corrido */
+            --white: #ffffff;        /* Títulos */
+            --glass: rgba(40, 52, 89, 0.7);
+        }
+
+        body {
+            background-color: var(--navy-main);
+            color: var(--lavender-grey);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- TIPOGRAFIA --- */
+        h1, h2, h3, h4, h5 {
+            color: var(--white);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .text-bronze { color: var(--bronze); }
+        .text-white { color: var(--white); }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+            font-size: 1.1rem;
+            color: var(--lavender-grey);
+        }
+
+        /* --- COMPONENTES UI --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--bronze);
+            color: #ffffff;
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--bronze-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--lavender-grey);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--bronze);
+            color: var(--bronze);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: rgba(40, 52, 89, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(180, 180, 204, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: var(--bronze); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--lavender-grey);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--bronze); }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 180px 20px 100px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(147, 110, 17, 0.15), transparent 50%);
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            max-width: 900px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(180, 180, 204, 0.1);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(147, 110, 17, 0.3);
+            color: var(--white);
+        }
+
+        /* --- METHODOLOGY (AGILE) --- */
+        .methodology {
+            padding: 80px 20px;
+            background-color: var(--navy-dark);
+        }
+
+        .agile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.02);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(180, 180, 204, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--bronze);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--bronze);
+            margin-bottom: 20px;
+        }
+
+        /* --- PROGRAMS (The Way, Maestria, Imersão) --- */
+        .programs {
+            padding: 100px 20px;
+            background-color: var(--navy-main);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .program-card {
+            background: var(--navy-dark);
+            border: 1px solid rgba(180, 180, 204, 0.1);
+            padding: 40px 30px;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card.featured {
+            border: 1px solid var(--bronze);
+            box-shadow: 0 0 20px rgba(147, 110, 17, 0.15);
+        }
+
+        .program-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--bronze);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        .program-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .program-duration {
+            font-size: 0.9rem;
+            color: var(--bronze);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .program-desc {
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .program-features {
+            list-style: none;
+            margin-bottom: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+        }
+
+        .program-features li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .program-features li::before {
+            content: '•';
+            color: var(--bronze);
+            font-size: 1.5rem;
+            line-height: 0;
+            margin-right: 10px;
+        }
+
+        /* --- CONTACT / CTA --- */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-main) 100%);
+        }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--bronze);
+            padding: 50px;
+            border-radius: 12px;
+            background: rgba(147, 110, 17, 0.03);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid rgba(180, 180, 204, 0.1);
+            padding: 60px 20px;
+            background-color: #151b30;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .programs-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplificado para demo */
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Lexis<span>Academy</span></a>
+            <nav class="nav-links">
+                <a href="#metodologia">Metodologia Ágil</a>
+                <a href="#programas">Nossos Programas</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#contato" style="color: var(--bronze); font-weight: 700;">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-badges">
+            <span class="badge">Metodologia Ágil</span>
+            <span class="badge">Ensino Acelerado</span>
+            <span class="badge">Foco Executivo</span>
+        </div>
+        <h1>
+            Domine o Inglês Profissional com <br>
+            <span class="text-bronze">Agilidade e Estratégia</span>
+        </h1>
+        <p>
+            Chega de anos estudando gramática sem resultados. A Lexis Academy utiliza conceitos de <strong>Scrum e Neurociência</strong> para desbloquear sua fluência e alavancar sua carreira internacional.
+        </p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+            <a href="#programas" class="btn">Conhecer os Programas</a>
+            <a href="#contato" class="btn btn-outline">Agendar Diagnóstico</a>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section id="metodologia" class="methodology">
+        <h2 class="section-title">Por que o Método Tradicional Falha?</h2>
+        <p class="section-subtitle">A maioria das escolas ensina "sobre o inglês". Nós usamos o inglês como ferramenta real através da <strong>Metodologia Ágil</strong>.</p>
+        
+        <div class="agile-grid">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Sprints de Aprendizado</h3>
+                <p>Em vez de semestres longos, trabalhamos com ciclos curtos e metas definidas. Você vê o progresso acontecendo semana a semana.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>Active Recall</h3>
+                <p>Estimulação constante da memória ativa. Você não apenas "assiste" à aula, você produz, fala e pratica 100% do tempo.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Foco em Resultados (KPIs)</h3>
+                <p>Seu inglês é tratado como um projeto. Definimos objetivos claros (uma apresentação, uma entrevista) e trabalhamos para atingi-los.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programas" class="programs">
+        <h2 class="section-title">Escolha Sua Jornada</h2>
+        <p class="section-subtitle">Soluções desenhadas para diferentes necessidades e velocidades.</p>
+
+        <div class="programs-grid">
+            <!-- PROGRAMA 1 -->
+            <div class="program-card">
+                <div class="program-title">Maestria</div>
+                <div class="program-duration">Intensivo Noturno / Online</div>
+                <p class="program-desc">
+                    Ideal para quem trabalha durante o dia mas precisa acelerar o inglês com urgência. Aulas ao vivo focadas em Business English.
+                </p>
+                <ul class="program-features">
+                    <li>Aulas ao vivo 3x na semana</li>
+                    <li>Grupos reduzidos de alta performance</li>
+                    <li>Material didático digital incluso</li>
+                </ul>
+                <a href="#contato" class="btn btn-outline" style="margin-top: auto; text-align: center;">Saiba Mais</a>
+            </div>
+
+            <!-- PROGRAMA 2 (DESTAQUE) -->
+            <div class="program-card featured">
+                <span class="program-tag">Mais Procurado</span>
+                <div class="program-title">The Way</div>
+                <div class="program-duration">Programa de 10 Meses</div>
+                <p class="program-desc">
+                    O curso completo que leva você do nível atual à confiança total. Uma jornada estruturada com início, meio e fim definidos.
+                </p>
+                <ul class="program-features">
+                    <li>Mentoria individual de acompanhamento</li>
+                    <li>Plataforma exclusiva de exercícios</li>
+                    <li>Certificação de proficiência ao final</li>
+                </ul>
+                <a href="#contato" class="btn" style="margin-top: auto; text-align: center;">Quero Esta Vaga</a>
+            </div>
+
+            <!-- PROGRAMA 3 -->
+            <div class="program-card">
+                <div class="program-title">Imersão</div>
+                <div class="program-duration">15 Dias Intensivos</div>
+                <p class="program-desc">
+                    O "Bootcamp" do inglês. Um mergulho profundo no idioma para destravar a fala em tempo recorde antes de uma viagem ou projeto.
+                </p>
+                <ul class="program-features">
+                    <li>Contato diário com o idioma</li>
+                    <li>Simulações de cenários reais</li>
+                    <li>Foco total em conversação</li>
+                </ul>
+                <a href="#contato" class="btn btn-outline" style="margin-top: auto; text-align: center;">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS / PROOF -->
+    <section style="padding: 60px 20px; border-bottom: 1px solid rgba(180, 180, 204, 0.1);">
+        <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; color: var(--lavender-grey);">Nossos alunos estão nas melhores empresas</p>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; opacity: 0.6; gap: 30px;">
+                <!-- Placeholders de logos de empresas em texto -->
+                <h3 style="color: var(--lavender-grey);">GOOGLE</h3>
+                <h3 style="color: var(--lavender-grey);">MICROSOFT</h3>
+                <h3 style="color: var(--lavender-grey);">AMAZON</h3>
+                <h3 style="color: var(--lavender-grey);">EMBRAER</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contato" class="cta-section">
+        <div class="cta-box">
+            <h2 style="margin-bottom: 20px;">Pronto para transformar sua carreira?</h2>
+            <p style="margin-bottom: 30px;">
+                Não deixe a falta de inglês ser a barreira entre você e sua promoção ou oportunidade internacional. Fale com nossos consultores e descubra qual programa (The Way, Maestria ou Imersão) é ideal para o seu momento.
+            </p>
+            <form style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+                <input type="text" placeholder="Seu Nome" style="padding: 15px; border-radius: 4px; border: 1px solid #ccc; width: 100%;">
+                <input type="email" placeholder="Seu E-mail Corporativo" style="padding: 15px; border-radius: 4px; border: 1px solid #ccc; width: 100%;">
+                <input type="tel" placeholder="WhatsApp" style="padding: 15px; border-radius: 4px; border: 1px solid #ccc; width: 100%;">
+                <button type="button" class="btn" style="width: 100%;">Solicitar Contato</button>
+            </form>
+            <p style="font-size: 0.8rem; margin-top: 20px; color: var(--lavender-grey);">
+                Respeitamos sua privacidade. Seus dados estão seguros.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <a href="#" class="logo" style="font-size: 1.2rem;">Lexis<span>Academy</span></a>
+                <p style="margin-top: 20px; max-width: 300px; color: var(--lavender-grey);">
+                    A escola de inglês definitiva para quem busca eficiência, metodologia validada e resultados reais.
+                </p>
+            </div>
+            <div class="contact-info" style="text-align: right;">
+                <h4 style="color: var(--white); margin-bottom: 15px;">Contato</h4>
+                <p>contato@lexis.academy</p>
+                <p>São Paulo / Online Global</p>
+                <div style="margin-top: 20px;">
+                    <a href="#" style="color: var(--bronze); margin-left: 15px; text-decoration: none;">Instagram</a>
+                    <a href="#" style="color: var(--bronze); margin-left: 15px; text-decoration: none;">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); color: #555;">
+            &copy; 2025 Lexis Academy. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
